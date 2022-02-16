@@ -8,7 +8,7 @@
   https://www.w3schools.com/html/html5_webstorage.asp
   https://developer.mozilla.org/pt-BR/docs/Web/API/Storage/setItem
 */
-let positionOl = document.querySelector('#lista-tarefas');
+const positionOl = document.querySelector('#lista-tarefas');
 
 function addNewLi() {
   const positionButton = document.querySelector('#criar-tarefa');
@@ -24,13 +24,13 @@ addNewLi();
 
 function clickChangeBg() {
   positionOl.addEventListener('click', function (event) {
-  const positionLi = document.querySelector('#lista-tarefas').childNodes;
+    const positionLi = document.querySelector('#lista-tarefas').childNodes;
     for (let i = 0; i < positionLi.length; i += 1) {
       positionLi[i].style.backgroundColor = '';
-      positionLi[i].classList.remove('selected')
+      positionLi[i].classList.remove('selected');
     }
     event.target.style.backgroundColor = 'gray';
-    event.target.classList.add('selected')
+    event.target.classList.add('selected');
   });
 }
 clickChangeBg();
@@ -87,4 +87,4 @@ removeSelected();
 
 window.onload = function () {
   positionOl.innerHTML = localStorage.getItem('liItens');
-}
+};
