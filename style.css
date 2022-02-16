@@ -44,3 +44,7 @@ li {
   margin: 2px;
   line-height: 28px;
 }
+
+.completed {
+  text-decoration: line-through solid black;
+}

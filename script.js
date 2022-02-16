@@ -6,7 +6,7 @@
 */
 
 function addNewLi() {
-  let positionButton = document.querySelector('#criar-tarefa');
+  const positionButton = document.querySelector('#criar-tarefa');
   positionButton.addEventListener('click', function () {
     let positionOl = document.querySelector('#lista-tarefas');
     let valueInput = document.querySelector('#texto-tarefa');
@@ -19,15 +19,26 @@ function addNewLi() {
 addNewLi();
 
 function clickChangeBg() {
-  let positionOl = document.querySelector('#lista-tarefas');
+  const positionOl = document.querySelector('#lista-tarefas');
   positionOl.addEventListener('click',function (event) {
     let positionLi = document.querySelector('#lista-tarefas').childNodes;
-    for( let i=0; i< positionLi.length; i +=1){
-      positionLi[i].style.backgroundColor = '';   
+    for (let i = 0; i < positionLi.length; i += 1) {
+      positionLi[i].style.backgroundColor = '';
     }
     event.target.style.backgroundColor = 'gray';
   });
 }
 clickChangeBg();
 
+function markTask() {
+  const positionOl = document.querySelector('#lista-tarefas');
+  positionOl.addEventListener('dblclick', function (event) {
+    if (event.target.classList.contains('completed')) {
+      event.target.classList.remove('completed');
+    } else {
+      event.target.classList.add('completed');
+    }
+  });
+}
 
+markTask();
