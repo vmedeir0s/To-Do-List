@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,100&display=swap');
+* {
+  margin: 0;
+  pad: 0;
+}
+
+body {
+  background-color: rgb(0, 174, 255);
+  font-family: 'Roboto', sans-serif;
+}
+
+header {
+  margin-top: 50px;
+  margin-left: 40px;
+  padding: 30px;
+  padding-left: 30px;
+  width: 900px;
+  height: 200px;
+  border-radius: 20px;
+  background-color: white;
+  line-height: 45px;
+}
+
+#funcionamento {
+  font-size: 22px;
+  font-weight: 100;
+  font-style: italic;
+}
+
+#criar-tarefa {
+  background-color: blue;
+  color: white;
+  font-size: 16px;
+  font-weight: 800;
+  margin-left: 5px;
+  padding: 8px 20px;
+  border-radius: 20px;
+  border-style: none;
+}
