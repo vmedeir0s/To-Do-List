@@ -59,6 +59,10 @@ li {
   text-decoration: line-through solid black;
 }
 
+#remover-selecionado {
+  background-color: rgb(124, 61, 25);
+}
+
 #apaga-tudo {
   background-color: rgb(209 , 39 , 39);
 }

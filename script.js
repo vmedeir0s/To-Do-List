@@ -76,6 +76,15 @@ function saveTaskList() {
 }
 saveTaskList();
 
+function removeSelected() {
+  const positionButton = document.querySelector('#remover-selecionado');
+  positionButton.addEventListener('click', function () {
+    const positionSelected = document.querySelector('.selected');
+    positionOl.removeChild(positionSelected);
+  });
+}
+removeSelected();
+
 window.onload = function () {
   positionOl.innerHTML = localStorage.getItem('liItens');
 }
