@@ -22,6 +22,16 @@ header {
   line-height: 45px;
 }
 
+button {
+  margin-right: 10px;
+  border-style: none;
+  border-radius: 20px;
+  font-size: 16px;
+  padding: 8px 20px;
+  font-weight: 700;
+  color: white;
+}
+
 #funcionamento {
   font-size: 22px;
   font-weight: 100;
@@ -30,13 +40,11 @@ header {
 
 #criar-tarefa {
   background-color: blue;
-  color: white;
-  font-size: 16px;
-  font-weight: 800;
+
   margin-left: 5px;
-  padding: 8px 20px;
-  border-radius: 20px;
-  border-style: none;
+}
+#lista-tarefas {
+  margin-bottom: 20px;
 }
 
 li {
@@ -47,4 +55,23 @@ li {
 
 .completed {
   text-decoration: line-through solid black;
+}
+
+#apaga-tudo {
+  background-color: rgb(209, 39, 39);
+}
+
+#remover-finalizados {
+  background-color: rgb(112, 110, 110);
+}
+
+footer {
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 700;
+  padding-top: 2px;
+  margin-top: 296px;
+  text-align: center;
+  height: 30px;
+  background-color: wheat;
 }

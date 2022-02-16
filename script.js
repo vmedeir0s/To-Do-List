@@ -3,6 +3,7 @@
   https://www.geeksforgeeks.org/how-to-make-div-height-expand-with-its-content-using-css/       //Aumentar o height da div conforme for adicionando <li> dentro de <ol>
   https://developer.mozilla.org/pt-BR/docs/Web/API/Element/classList
   https://www.w3schools.com/jsref/met_element_removeattribute.asp#:~:text=The%20removeAttribute()%20method%20removes,result%20will%20be%20the%20same.
+  https://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript //Requisito 10
 */
 
 function addNewLi() {
@@ -42,3 +43,20 @@ function markTask() {
 }
 
 markTask();
+
+function clearTask() {
+  const positionButton = document.querySelector('#apaga-tudo');
+  positionButton.addEventListener('click', function () {
+    let positionsOl = document.querySelector('#lista-tarefas');
+    positionsOl.innerHTML = '';
+  })
+}
+
+clearTask();
+
+// function clearTaskDone() {
+//   const positionButton = document.querySelector('#remover-finalizados');
+//   positionButton.addEventListener('click', function () {
+//     let positionLiRisked
+//   });
+// }
