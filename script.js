@@ -52,9 +52,13 @@ function clearTask() {
 
 clearTask();
 
-// function clearTaskDone() {
-//   const positionButton = document.querySelector('#remover-finalizados');
-//   positionButton.addEventListener('click', function () {
-//     let positionLiRisked
-//   });
-// }
+function clearTaskDone() {
+  const positionButton = document.querySelector('#remover-finalizados');
+  positionButton.addEventListener('click', function () {
+    const positionLiRisked = document.querySelectorAll('.completed');
+    for (let i = 0; i < positionLiRisked.length; i += 1) {
+      positionOl.removeChild(positionLiRisked[i]);
+    }
+  });
+}
+clearTaskDone();
