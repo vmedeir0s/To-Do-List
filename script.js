@@ -1,7 +1,6 @@
 /* Referencias de páginas usadas como pesquisa.
-  https://www.w3schools.com/css/css3_buttons.asp
-
-
+  https://www.w3schools.com/css/css3_buttons.asp    //Estilizar botão
+  https://www.geeksforgeeks.org/how-to-make-div-height-expand-with-its-content-using-css/       //Aumentar o height da div conforme for adicionando <li> dentro de <ol>
 
 */
 

@@ -15,7 +15,8 @@ header {
   padding: 30px;
   padding-left: 30px;
   width: 900px;
-  height: 200px;
+  min-height: 250px;
+  height: auto;
   border-radius: 20px;
   background-color: white;
   line-height: 45px;
@@ -37,3 +38,4 @@ header {
   border-radius: 20px;
   border-style: none;
 }
+
