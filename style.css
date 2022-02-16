@@ -39,3 +39,8 @@ header {
   border-style: none;
 }
 
+li {
+  width: 600px;
+  margin: 2px;
+  line-height: 28px;
+}

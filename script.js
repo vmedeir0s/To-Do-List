@@ -1,7 +1,8 @@
 /* Referencias de páginas usadas como pesquisa.
   https://www.w3schools.com/css/css3_buttons.asp    //Estilizar botão
   https://www.geeksforgeeks.org/how-to-make-div-height-expand-with-its-content-using-css/       //Aumentar o height da div conforme for adicionando <li> dentro de <ol>
-
+  https://developer.mozilla.org/pt-BR/docs/Web/API/Element/classList
+  https://www.w3schools.com/jsref/met_element_removeattribute.asp#:~:text=The%20removeAttribute()%20method%20removes,result%20will%20be%20the%20same.
 */
 
 function addNewLi() {
@@ -16,3 +17,17 @@ function addNewLi() {
   })
 }
 addNewLi();
+
+function clickChangeBg() {
+  let positionOl = document.querySelector('#lista-tarefas');
+  positionOl.addEventListener('click',function (event) {
+    let positionLi = document.querySelector('#lista-tarefas').childNodes;
+    for( let i=0; i< positionLi.length; i +=1){
+      positionLi[i].style.backgroundColor = '';   
+    }
+    event.target.style.backgroundColor = 'gray';
+  });
+}
+clickChangeBg();
+
+
