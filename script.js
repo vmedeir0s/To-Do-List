@@ -4,8 +4,11 @@
   https://developer.mozilla.org/pt-BR/docs/Web/API/Element/classList
   https://www.w3schools.com/jsref/met_element_removeattribute.asp#:~:text=The%20removeAttribute()%20method%20removes,result%20will%20be%20the%20same.
   https://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript //Requisito 10
+  https://developer.mozilla.org/pt-BR/docs/Web/API/Storage/setItem
+  https://www.w3schools.com/html/html5_webstorage.asp
+  https://developer.mozilla.org/pt-BR/docs/Web/API/Storage/setItem
 */
-const positionOl = document.querySelector('#lista-tarefas');
+let positionOl = document.querySelector('#lista-tarefas');
 
 function addNewLi() {
   const positionButton = document.querySelector('#criar-tarefa');
@@ -24,8 +27,10 @@ function clickChangeBg() {
   const positionLi = document.querySelector('#lista-tarefas').childNodes;
     for (let i = 0; i < positionLi.length; i += 1) {
       positionLi[i].style.backgroundColor = '';
+      positionLi[i].classList.remove('selected')
     }
     event.target.style.backgroundColor = 'gray';
+    event.target.classList.add('selected')
   });
 }
 clickChangeBg();
@@ -62,3 +67,15 @@ function clearTaskDone() {
   });
 }
 clearTaskDone();
+
+function saveTaskList() {
+  const positionButton = document.querySelector('#salvar-tarefas');
+  positionButton.addEventListener('click', function () {
+    localStorage.setItem('liItens', positionOl.innerHTML);
+  });
+}
+saveTaskList();
+
+window.onload = function () {
+  positionOl.innerHTML = localStorage.getItem('liItens');
+}
