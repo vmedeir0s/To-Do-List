@@ -8,7 +8,7 @@
   https://www.w3schools.com/html/html5_webstorage.asp
   https://developer.mozilla.org/pt-BR/docs/Web/API/Storage/setItem
 */
-const positionOl = document.querySelector('#lista-tarefas');
+const positionOl = document.getElementById('lista-tarefas');
 
 function addNewLi() {
   const positionButton = document.querySelector('#criar-tarefa');
