@@ -26,10 +26,8 @@ function clickChangeBg() {
   positionOl.addEventListener('click', function (event) {
     const positionLi = document.querySelector('#lista-tarefas').childNodes;
     for (let i = 0; i < positionLi.length; i += 1) {
-      positionLi[i].style.backgroundColor = '';
       positionLi[i].classList.remove('selected');
     }
-    event.target.style.backgroundColor = 'gray';
     event.target.classList.add('selected');
   });
 }
@@ -79,11 +77,40 @@ saveTaskList();
 function removeSelected() {
   const positionButton = document.querySelector('#remover-selecionado');
   positionButton.addEventListener('click', function () {
-    const positionSelected = document.querySelector('.selected');
-    positionOl.removeChild(positionSelected);
+    const posSelect = document.querySelector('.selected');
+    if (posSelect != undefined && posSelect != '' && posSelect != 0 && posSelect != null) {
+      positionOl.removeChild(posSelect);
+    }
   });
 }
 removeSelected();
+
+function moveSelected() {
+  const positionButtonUp = document.querySelector('#mover-cima');
+  const positionButtonDown = document.querySelector('#mover-baixo');
+   positionButtonUp.addEventListener('click', function () {
+    let posSelect = document.querySelector('.selected');
+    
+    if (posSelect != undefined && posSelect != '' && posSelect != 0 && posSelect != null) {
+      let previousPos = posSelect.previousElementSibling
+      if(previousPos != undefined && previousPos != '' && previousPos != 0 && previousPos != null){
+        posSelect.parentNode.insertBefore(posSelect,previousPos);
+      }
+    }
+   });
+   positionButtonDown.addEventListener('click', function () {
+    let posSelect = document.querySelector('.selected');
+    
+    if (posSelect != undefined && posSelect != '' && posSelect != 0 && posSelect != null) {
+      let nextPos = posSelect.nextElementSibling;
+      if(nextPos != undefined && nextPos != '' && nextPos != 0 && nextPos != null){
+        posSelect.parentNode.insertBefore(posSelect.nextElementSibling, posSelect);
+      }
+    }
+   })
+}
+
+moveSelected();
 
 window.onload = function () {
   positionOl.innerHTML = localStorage.getItem('liItens');

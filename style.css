@@ -55,12 +55,20 @@ li {
   line-height: 28px;
 }
 
+.selected {
+  background-color: gray;
+}
+
 .completed {
   text-decoration: line-through solid black;
 }
 
 #remover-selecionado {
   background-color: rgb(124 , 61 , 25);
+}
+
+#mover-cima, #mover-baixo {
+  background-color: orange;
 }
 
 #apaga-tudo {
