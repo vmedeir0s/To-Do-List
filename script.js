@@ -78,36 +78,38 @@ function removeSelected() {
   const positionButton = document.querySelector('#remover-selecionado');
   positionButton.addEventListener('click', function () {
     const posSelect = document.querySelector('.selected');
-    if (posSelect != undefined && posSelect != '' && posSelect != 0 && posSelect != null) {
+    if (posSelect !== undefined && posSelect !== '' && posSelect !== 0 && posSelect !== null) {
       positionOl.removeChild(posSelect);
     }
   });
 }
 removeSelected();
 
+function moveToUp() {
+  const posSelect = document.querySelector('.selected');
+  if (posSelect !== undefined && posSelect !== null) {
+    const previousPos = posSelect.previousElementSibling;
+    if (previousPos !== undefined && previousPos !== null) {
+      posSelect.parentNode.insertBefore(posSelect, previousPos);
+    }
+  }
+}
+
+function moveToDown() {
+  const posSelect = document.querySelector('.selected');
+  if (posSelect !== undefined && posSelect !== null) {
+    const nextPos = posSelect.nextElementSibling;
+    if (nextPos !== undefined && nextPos !== null) {
+      posSelect.parentNode.insertBefore(posSelect.nextElementSibling, posSelect);
+    }
+  }
+}
+
 function moveSelected() {
   const positionButtonUp = document.querySelector('#mover-cima');
   const positionButtonDown = document.querySelector('#mover-baixo');
-   positionButtonUp.addEventListener('click', function () {
-    let posSelect = document.querySelector('.selected');
-    
-    if (posSelect != undefined && posSelect != '' && posSelect != 0 && posSelect != null) {
-      let previousPos = posSelect.previousElementSibling
-      if(previousPos != undefined && previousPos != '' && previousPos != 0 && previousPos != null){
-        posSelect.parentNode.insertBefore(posSelect,previousPos);
-      }
-    }
-   });
-   positionButtonDown.addEventListener('click', function () {
-    let posSelect = document.querySelector('.selected');
-    
-    if (posSelect != undefined && posSelect != '' && posSelect != 0 && posSelect != null) {
-      let nextPos = posSelect.nextElementSibling;
-      if(nextPos != undefined && nextPos != '' && nextPos != 0 && nextPos != null){
-        posSelect.parentNode.insertBefore(posSelect.nextElementSibling, posSelect);
-      }
-    }
-   })
+  positionButtonUp.addEventListener('click', moveToUp);
+  positionButtonDown.addEventListener('click', moveToDown);
 }
 
 moveSelected();
